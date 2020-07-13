@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="main.css">
+    <script src="bundle.js" async></script>
+    <title>Stimulus Rocks!</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 data-controller="example"></h1>
+      <p></p>
+
+      <!-- ------------ Asynchronously Loading HTML ------------------ -->
+
+      <div data-controller="content-loader"
+           data-content-loader-url="/messages.html"
+           data-content-loader-refresh-interval="5000">
+      </div>
+
+      <!-- ------------ Asynchronously Loading HTML ------------------ -->
+
+      <div><br></div>
+
+      <div data-controller="slideshow" >
+        <div>
+          <button data-action="slideshow#previous" type="button" class="btn btn-primary">←</button>
+          <button data-action="slideshow#next" type="button" class="btn btn-primary">→</button>
+        </div>
+
+        <div data-target="slideshow.slide" class="slide"><h1>🐵</h1></div>
+        <div data-target="slideshow.slide" class="slide"><h1>🙈</h1></div>
+        <div data-target="slideshow.slide" class="slide"><h1>🙉</h1></div>
+        <div data-target="slideshow.slide" class="slide"><h1>🙊</h1></div>
+      </div>
+
+      <div><br></div>
+
+      <div data-controller="clipboard">
+        PIN: <textarea data-target="clipboard.source" readonly>1515</textarea>
+        <a href="#" data-action="clipboard#copy" class="clipboard-button btn btn-primary">Copy to Clipboard</a>
+      </div>
+
+      <div><br></div>
+
+      <div data-controller="clipboard">
+        PIN: <input data-target="clipboard.source" type="text" value="3737" readonly>
+        <button type="button" data-action="clipboard#copy" class="clipboard-button btn btn-primary">Copy to Clipboard</button>
+      </div>
+
+      <div><br></div>
+
+      <div data-controller="clipboard">
+        PIN: <input data-target="clipboard.source" type="text" value="12345" readonly>
+        <button type="button" data-action="clipboard#copy" class="clipboard-button btn btn-primary">Copy to Clipboard</button>
+      </div>
+
+      <div><br></div>
+
+      <div data-controller="hello">
+        <input data-target="hello.name" type="text">
+        <button type="button" data-action="click->hello#greet" class="btn btn-outline-primary">Greet</button>
+      </div>
+
+    </div>
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
